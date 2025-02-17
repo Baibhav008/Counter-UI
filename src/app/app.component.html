@@ -3,7 +3,15 @@
     <button (click)="increment()">Increment Counter</button>
   </div>
  
-  <div>
-    Singleton: <p *ngFor="let x of singletonCounts">{{x}}</p>
+  <div style="display: flex;flex-direction: row; ">
+    <div style="margin-left: 2rem;">
+      Singleton: <p *ngFor="let x of singletonCounts">{{x}}
+    </div>
+    <div style="margin-left: 2rem;">
+      Scoped: <p *ngFor="let x of scopedCounts">{{x}}
+    </div>
+    <div style="margin-left: 2rem;">
+      Transient: <p *ngFor="let x of transientCounts">{{x}}
+    </div>
   </div>
 </div>

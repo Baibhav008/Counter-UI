@@ -10,12 +10,20 @@ export class AppComponent {
   title = 'counter-ui';
 
   singletonCounts :any[] = [];
+  scopedCounts :any[] = [];
+  transientCounts :any[] = [];
 
   counterService = inject(MasterService);
 
   increment = () =>{
-    this.counterService.getCounts().subscribe(data=>{
+    this.counterService.getSingletonCounts().subscribe(data=>{
       this.singletonCounts.push(data); 
+    })
+    this.counterService.getScopedCounts().subscribe(data=>{
+      this.scopedCounts.push(data); 
+    })
+    this.counterService.getTransientCounts().subscribe(data=>{
+      this.transientCounts.push(data); 
     })
   }
 }

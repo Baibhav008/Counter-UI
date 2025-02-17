@@ -9,8 +9,17 @@ export class MasterService {
 
   constructor(private http : HttpClient) { }
 
-  getCounts():Observable<any>
+  getSingletonCounts():Observable<any>
   {
-    return this.http.get('https://localhost:7148/api/Count');
+    return this.http.get('https://localhost:7148/api/Count/singleton');
+  }
+  getScopedCounts():Observable<any>
+  {
+    return this.http.get('https://localhost:7148/api/Count/scoped');
+  }
+  getTransientCounts():Observable<any>
+  {
+    return this.http.get('https://localhost:7148/api/Count/transient');
   }
 }
+
